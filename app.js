@@ -24,14 +24,14 @@ const membershipFunction = {
         'High': x => m_right_shoulder(2, 6)(x)
     },
     height: {
-        'Low': x => m_left_shoulder(155.7528, 179.832)(x),
+        'Short': x => m_left_shoulder(155.7528, 179.832)(x),
         'Medium': x => m_triangle(155.7528, 179.832, 188.976)(x),
-        'High': x => m_right_shoulder(179.832, 188.976)(x)
+        'Tall': x => m_right_shoulder(179.832, 188.976)(x)
     },
     weight: {
-        'Low': x => m_left_shoulder(71.21400209, 74.84274105)(x),
+        'Light': x => m_left_shoulder(71.21400209, 74.84274105)(x),
         'Medium': x => m_triangle(71.21400209, 74.84274105, 81.41983042)(x),
-        'High': x => m_right_shoulder(74.84274105, 81.41983042)(x)
+        'Heavy': x => m_right_shoulder(74.84274105, 81.41983042)(x)
     },
     agility: {
         'Low': x => m_left_shoulder(56, 65.5)(x),
