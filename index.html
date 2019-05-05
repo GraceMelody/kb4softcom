@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
 		<title>KB4 Soft Computing</title>
     </head>
     <body>
@@ -20,8 +21,9 @@
 				<h3>Filter by:</h3>
 				<div class="container">
 					<div class="row">
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Age
+						<div class="dropdown col-xs-1" data-attr="Age">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Age</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -30,8 +32,9 @@
 								<li><a href="#">Old</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Nationality
+						<div class="dropdown col-xs-1" data-attr="Nationality">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Nationality</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -86,8 +89,9 @@
 								<li><a href="#">Wales</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Overall
+						<div class="dropdown col-xs-1" data-attr="Overall">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Overall</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -96,8 +100,9 @@
 								<li><a href="#">High</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Value
+						<div class="dropdown col-xs-1" data-attr="Value">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Value</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -106,8 +111,9 @@
 								<li><a href="#">High</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Wage
+						<div class="dropdown col-xs-1" data-attr="Wage">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Wage</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -116,8 +122,9 @@
 								<li><a href="#">High</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Height
+						<div class="dropdown col-xs-1" data-attr="Height">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Height</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -126,8 +133,9 @@
 								<li><a href="#">Tall</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Weight
+						<div class="dropdown col-xs-1" data-attr="Weight">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Weight</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -136,8 +144,9 @@
 								<li><a href="#">Tall</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Agility
+						<div class="dropdown col-xs-1" data-attr="Agility">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Agility</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -146,8 +155,9 @@
 								<li><a href="#">High</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Strength
+						<div class="dropdown col-xs-1" data-attr="Strength">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Strength</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -156,8 +166,9 @@
 								<li><a href="#">High</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Vision
+						<div class="dropdown col-xs-1" data-attr="Vision">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Vision</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -168,8 +179,9 @@
 						</div>
 					</div>
 					<div class="row under">
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Preferred Foot
+						<div class="dropdown col-xs-1" data-attr="Preferred Foot">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Preferred Foot</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -177,8 +189,9 @@
 								<li><a href="#">Right</a></li>
 							</ul>
 						</div>
-						<div class="dropdown col-xs-1">
-							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Body Type
+						<div class="dropdown col-xs-1" data-attr="Body Type">
+							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="drop-title">Body Type</span>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
@@ -190,7 +203,7 @@
 					</div>
 					<div class="row under">
 						<div class="col-xs-offset-10">
-							<button type="button" class="btn btn-primary nodge">Filter Search</button>
+							<button type="button" class="btn btn-primary nodge btn-filter">Filter Search</button>
 						</div>
 					</div>
 				</div>
