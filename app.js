@@ -8,6 +8,46 @@ const membershipFunction = {
         "Young": x => m_triangle(21.75, 25, 29)(x),
         "Old": x => m_right_shoulder(25, 29)(x),
     },
+    overall: {
+        'Low': x => m_left_shoulder(61, 66)(x),
+        'Medium': x => m_triangle(61, 66, 70)(x),
+        'High': x => m_right_shoulder(66, 70)(x)
+    },
+    value: {
+        'Low': x => m_left_shoulder(267.5, 600)(x),
+        'Medium': x => m_triangle(267.5, 600, 1225)(x),
+        'High': x => m_right_shoulder(600, 1225)(x),
+    },
+    wage: {
+        'Low': x => m_left_shoulder(1, 2)(x),
+        'Medium': x => m_triangle(1, 2, 6)(x),
+        'High': x => m_right_shoulder(2, 6)(x)
+    },
+    height: {
+        'Low': x => m_left_shoulder(155.7528, 179.832)(x),
+        'Medium': x => m_triangle(155.7528, 179.832, 188.976)(x),
+        'High': x => m_right_shoulder(179.832, 188.976)(x)
+    },
+    weight: {
+        'Low': x => m_left_shoulder(71.21400209, 74.84274105)(x),
+        'Medium': x => m_triangle(71.21400209, 74.84274105, 81.41983042)(x),
+        'High': x => m_right_shoulder(74.84274105, 81.41983042)(x)
+    },
+    agility: {
+        'Low': x => m_left_shoulder(56, 65.5)(x),
+        'Medium': x => m_triangle(56, 65.5, 75)(x),
+        'High': x => m_right_shoulder(65.5, 75)(x)
+    },
+    strength: {
+        'Low': x => m_left_shoulder(59, 67)(x),
+        'Medium': x => m_triangle(59, 67, 75)(x),
+        'High': x => m_right_shoulder(67, 75)(x)
+    },
+    vision: {
+        'Low': x => m_left_shoulder(42.75, 54)(x),
+        'Medium': x => m_triangle(42.75, 54, 62.25)(x),
+        'High': x => m_right_shoulder(54, 62.25)(x)
+    }
 }
 
 
