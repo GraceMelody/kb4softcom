@@ -88,6 +88,11 @@ $(document).ready(function() {
 
     // Adds "All"
     $(".dropdown .dropdown-menu").prepend('<li><a href="#">All</a></li>')
+    $(".dropdown .dropdown-menu").each((i, elm)=>{
+        $(elm).prepend('<li class="dropdown-header">' + $(elm).closest(".dropdown").data("attr") +'</li>')
+    })
+        
+    
 
     $(".dropdown a").on("click", function(event){
         const dropdown = $(this).closest(".dropdown")
