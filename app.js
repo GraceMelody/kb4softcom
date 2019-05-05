@@ -1,6 +1,6 @@
 'use strict';
 
-const FIRE_THRESHOLD = 0.6
+const FIRE_THRESHOLD = 0.4
 
 const membershipFunction = {
     age: {
@@ -158,7 +158,7 @@ $(document).ready(function() {
     function calculateFireStrength(elm) {
         const attributesKV = getSelectedAttributesKeyVal()
 
-        let fireStrength = 0
+        let membership_values = []
         for (const key in attributesKV) {
             const desiredVal = attributesKV[key]
 
@@ -167,9 +167,12 @@ $(document).ready(function() {
             const rowVal = getAttrFromRow(elm, normalizedKey)
 
             const membership = getMembership(normalizedKey, desiredVal, rowVal)
-            fireStrength += membership
+            membership_values.push(membership)
         }
+
+        const fireStrength = membership_values.reduce((a,b) => Math.min(a,b)) // Uses MIN to reduce values (AND)
         
+
         return fireStrength
     }
 
