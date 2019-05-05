@@ -85,6 +85,10 @@ function m_right_shoulder(a,b) {
 
 
 $(document).ready(function() {
+
+    // Adds "All"
+    $(".dropdown .dropdown-menu").prepend('<li><a href="#">All</a></li>')
+
     $(".dropdown a").on("click", function(event){
         const dropdown = $(this).closest(".dropdown")
         const title = dropdown.find(".drop-title")
@@ -93,9 +97,14 @@ $(document).ready(function() {
         const val = this.innerHTML.trim()
         
         $(this).closest("li").siblings().removeAttr("selected")
-        $(this).closest("li").attr("selected", "selected")
+        if (val == "All") {
+            title.html(dropdown.data("attr"))
+        } else {
+            $(this).closest("li").attr("selected", "selected")
+            title.html(val)
+        }
 
-        title.html(val)
+        
         
         event.preventDefault()
     })
@@ -117,7 +126,7 @@ $(document).ready(function() {
         const retObj = {}
 
         dropdownsWithAttr.map((i, elm)=>{
-            const key =  $(elm).data("attr")
+            const key = $(elm).data("attr")
             const val = $(elm).find("[selected]").find("a").html().trim()
             retObj[key] = val
         })
@@ -150,7 +159,6 @@ $(document).ready(function() {
         }
 
         const m =  membershipFunction[key][desiredVal](rowVal)
-        console.log(m)
         return m
     }
 
