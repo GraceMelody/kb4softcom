@@ -86,14 +86,13 @@ function m_right_shoulder(a,b) {
 
 $(document).ready(function() {
 
+    document.getElementById("notfound").className = 'hidden';
     // Adds "All"
     $(".dropdown .dropdown-menu").prepend('<li><a href="#">All</a></li>')
     $(".dropdown .dropdown-menu").each((i, elm)=>{
         $(elm).prepend('<li class="dropdown-header">' + $(elm).closest(".dropdown").data("attr") +'</li>')
     })
         
-    
-
     $(".dropdown a").on("click", function(event){
         const dropdown = $(this).closest(".dropdown")
         const title = dropdown.find(".drop-title")
@@ -108,22 +107,22 @@ $(document).ready(function() {
             $(this).closest("li").attr("selected", "selected")
             title.html(val)
         }
-
-        
-        
         event.preventDefault()
     })
 
     $(".btn-filter").on("click", function(event) {
         doFilter()
     })
-
+    $(".btn-clear").on("click", function(event) {
+        clearFilter()
+        document.getElementById("notfound").className = 'hidden';
+    })
     // Finds all attributes that are set
     function getSelectedAttributesKeyVal() {
         const dropdownsWithAttr = $(".dropdown").filter((i,elm)=>{
             const lists = $(elm).find("li") // Find all List in dropdown
             const noOfSelected = lists.filter((i,e)=>$(e).attr("selected")).length // Find number of selected elements
-
+            
             return noOfSelected > 0 // Take the element if selection exists
         })
 
@@ -135,6 +134,7 @@ $(document).ready(function() {
             const val = $(elm).find("[selected]").find("a").html().trim()
             retObj[key] = val
         })
+        
         return retObj
     }
 
@@ -187,7 +187,6 @@ $(document).ready(function() {
 
         const fireStrength = membership_values.reduce((a,b) => Math.min(a,b)) // Uses MIN to reduce values (AND)
         
-
         return fireStrength
     }
 
@@ -200,9 +199,37 @@ $(document).ready(function() {
     function doFilter() {
         clearFilter()
         const rows = $("table.table tbody").find("tr")
+        /*var table = $("table.table tbody");
+        table.find('tr').each(function () {
+            var $tds = $(this).find('td'),
+                Name = $tds.eq(0).text(),
+                Age = $tds.eq(1).text(),
+                Photo = $tds.eq(2).text(),
+                Nationality = $tds.eq(3).text(),
+                Overall = $tds.eq(4).text(),
+                Value = $tds.eq(5).text(),
+                Wage = $tds.eq(6).text(),
+                Height = $tds.eq(7).text(),
+                Weight = $tds.eq(8).text(),
+                Agility = $tds.eq(9).text(),
+                Strength = $tds.eq(10).text(),
+                Vision = $tds.eq(11).text(),
+                Preferred Foot = $tds.eq(12).text(),
+                Body Type = $tds.eq(13).text();
+            
+        });*/
         const filtered = rows.filter((i, row) => {
             const fireStrength = calculateFireStrength(row)
             return fireStrength < FIRE_THRESHOLD // If true this row will be hidden
         }).hide()
+
+        var x = filtered.length;
+        //document.getElementById("notfound").innerHTML = x;
+        if (x == 200) {        
+            document.getElementById("notfound").className = '';
+        } else {
+            document.getElementById("notfound").className = 'hidden';
+            document.getElementById("notfound").style.textAlign = "center";
+        }
     }
 })
