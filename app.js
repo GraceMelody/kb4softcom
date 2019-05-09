@@ -163,6 +163,8 @@ $(document).ready(function() {
             }
         }
 
+        rowVal = rowVal.replace(/[^0-9]/g,"")
+
         const m =  membershipFunction[key][desiredVal](rowVal)
         return m
     }
